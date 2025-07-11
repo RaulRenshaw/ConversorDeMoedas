@@ -67,7 +67,8 @@ public class GUI extends JFrame {
                    String destino = campoMoedaDestino.getText().trim().toUpperCase();
 
                    double convertido = ConversorService.converterMoeda(origem, destino, valor);
-                   resultado.setText("Convertido:" + convertido + " " + destino);
+                   String formatado = String.format("%.2f", convertido);
+                   resultado.setText("Convertido:" + formatado + " " + destino);
 
                }catch (NumberFormatException ex){
                    resultado.setText("Valor Invalido");
